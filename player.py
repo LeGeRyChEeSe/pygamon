@@ -16,23 +16,19 @@ class Player(animation.AnimateSprite):
 
     def move_right(self): 
         self.position[0] += self.speed
-        self.way = [6, 7, 8]
-        self.animation()
+        self.animation("right")
 
     def move_left(self): 
         self.position[0] -= self.speed
-        self.way = [3, 4, 5]
-        self.animation()
+        self.animation("left")
 
     def move_up(self): 
         self.position[1] -= self.speed
-        self.way = [9, 10, 11]
-        self.animation()
+        self.animation("up")
 
     def move_down(self): 
         self.position[1] += self.speed
-        self.way = [0, 1, 2]
-        self.animation()
+        self.animation("down")
 
     
     def update(self):

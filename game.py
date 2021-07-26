@@ -39,14 +39,17 @@ class Game:
     def handle_input(self):
         pressed = key.get_pressed()
 
-        if pressed[pygame.K_UP]:
+        if pressed[pygame.K_UP] or pressed[pygame.K_z]:
             self.player.move_up()
-        if pressed[pygame.K_DOWN]:
+        if pressed[pygame.K_DOWN] or pressed[pygame.K_s]:
             self.player.move_down()
-        if pressed[pygame.K_LEFT]:
+        if pressed[pygame.K_LEFT] or pressed[pygame.K_q]:
             self.player.move_left()
-        if pressed[pygame.K_RIGHT]:
+        if pressed[pygame.K_RIGHT] or pressed[pygame.K_d]:
             self.player.move_right()
+
+        if not pressed[pygame.K_UP] and not pressed[pygame.K_DOWN] and not pressed[pygame.K_LEFT] and not pressed[pygame.K_RIGHT]:
+            self.player.image = self.player.default_image
         
     def switch_house(self):
         # Charger la carte (tmx)
